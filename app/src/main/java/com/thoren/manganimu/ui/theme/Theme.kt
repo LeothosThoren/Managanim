@@ -1,4 +1,4 @@
-package com.thoren.manganim.ui.theme
+package com.thoren.manganimu.ui.theme
 
 import android.app.Activity
 import android.os.Build

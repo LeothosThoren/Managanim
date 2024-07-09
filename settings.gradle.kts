@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Manganim"
+rootProject.name = "Manganimu"
 include(":app")
- 
+include(":build-logic")
+include(":build-logic:convention")

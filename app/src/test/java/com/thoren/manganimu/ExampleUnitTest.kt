@@ -1,4 +1,4 @@
-package com.thoren.manganim
+package com.thoren.manganimu
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
