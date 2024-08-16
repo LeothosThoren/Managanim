@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -14,6 +15,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Manganimu"
+
 include(":app")
-include(":build-logic")
-include(":build-logic:convention")
