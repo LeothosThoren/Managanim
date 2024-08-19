@@ -1,7 +1,7 @@
 [versions]
-androidxLifecycle = "2.8.4"
 activityCompose = "1.9.1"
 androidTools = "31.5.2"
+androidxLifecycle = "2.8.4"
 agp = "8.5.2"
 coil = "2.7.0"
 composeBom = "2024.06.00"
@@ -14,12 +14,16 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.23"
+m3Adaptive = "1.0.0-beta04"
+m3AdaptiveNavigationSuite = "1.3.0-beta05"
 m3WindowSizeClass = "1.2.1"
 navigationTesting = "2.7.7"
 okhttpBom = "4.10.0"
 retrofit = "2.11.0"
 room = "2.6.1"
 splashscreen = "1.0.1"
+core = "1.13.1"
+uiTextGoogleFonts = "1.6.8"
 
 
 [libraries]
@@ -27,9 +31,13 @@ splashscreen = "1.0.1"
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material3-adaptive = { group = "androidx.compose.material3.adaptive", name = "adaptive", version.ref = "m3Adaptive" }
+androidx-compose-material3-adaptive-layout = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout", version.ref = "m3Adaptive" }
+androidx-compose-material3-adaptive-navigation = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "m3Adaptive" }
+androidx-compose-material3-navigationSuite = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite", version.ref = "m3AdaptiveNavigationSuite" }
 androidx-compose-material3-window-sizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "m3WindowSizeClass" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -75,6 +83,8 @@ compose-gradle-plugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 room-gradle-plugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,15 +1,15 @@
 package com.thoren.manganimu
 
 
-import com.android.build.api.dsl.CommonExtension
+import com.android.build.gradle.BaseExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
 internal fun Project.configureCompose(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: BaseExtension,
 ) {
     commonExtension.apply {
-        buildFeatures {
+        buildFeatures.apply {
             compose = true
         }
 

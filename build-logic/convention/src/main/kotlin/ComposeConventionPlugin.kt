@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import com.android.build.gradle.BaseExtension
 import com.thoren.manganimu.configureCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -11,7 +11,7 @@ class ComposeConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.plugin.compose")
             }
 
-            val extension = extensions.getByType<BaseAppModuleExtension>()
+            val extension = extensions.getByType<BaseExtension>()
             configureCompose(extension)
         }
     }
