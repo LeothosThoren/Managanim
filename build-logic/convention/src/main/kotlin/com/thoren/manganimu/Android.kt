@@ -8,7 +8,7 @@ internal fun configureAndroid(commonExtension: CommonExtension<*, *, *, *, *, *>
         compileSdk = 34
 
         defaultConfig {
-            minSdk = 21
+            minSdk = 26
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
 
