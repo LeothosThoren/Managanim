@@ -18,3 +18,4 @@ rootProject.name = "Manganimu"
 
 include(":app")
 include(":core:ui")
+include(":feature:anime")
