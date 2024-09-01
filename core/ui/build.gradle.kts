@@ -19,6 +19,7 @@ dependencies {
     api(libs.androidx.compose.ui.tooling)
     api(libs.androidx.compose.ui.tooling.preview)
     api(libs.coil.compose)
+    api(libs.hilt.navigation.compose)
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.ui.text.google.fonts)
