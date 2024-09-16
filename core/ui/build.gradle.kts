@@ -13,7 +13,6 @@ dependencies {
     api(libs.androidx.compose.material3.adaptive.layout)
     api(libs.androidx.compose.material3.adaptive.navigation)
     api(libs.androidx.compose.material3.navigationSuite)
-    api(libs.androidx.compose.material3.window.sizeClass)
     api(libs.androidx.compose.ui)
     api(libs.androidx.compose.ui.graphics)
     api(libs.androidx.compose.ui.tooling)
