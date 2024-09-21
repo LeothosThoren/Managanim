@@ -8,7 +8,6 @@ android {
 }
 
 dependencies {
-    // Todo replace it with project test module dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 }

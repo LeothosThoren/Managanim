@@ -18,7 +18,10 @@ rootProject.name = "Manganimu"
 
 include(":app")
 include(":core:ui")
+include(":data:anime")
+include(":domain:anime")
 include(":feature:anime")
 include(":feature:manga")
 include(":feature:music")
 include(":feature:option")
+
