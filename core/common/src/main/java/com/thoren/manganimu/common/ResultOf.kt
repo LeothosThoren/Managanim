@@ -62,3 +62,9 @@ inline fun <S, F> ResultOf<S, F>.onFailure(
         is ResultOf.Failure -> action(value)
     }
 }
+
+inline fun <S, reified F : Throwable> ResultOf<S, F>.throwIf(
+    predicate: (F) -> Boolean,
+): ResultOf<S, F> = onFailure {
+    if (predicate(it)) throw it
+}
