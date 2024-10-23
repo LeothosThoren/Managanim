@@ -10,6 +10,7 @@ android {
 dependencies {
     api(project(":data:anime"))
 
-
+    implementation(project(":core:common"))
+    implementation(project(":core:models"))
 }
 

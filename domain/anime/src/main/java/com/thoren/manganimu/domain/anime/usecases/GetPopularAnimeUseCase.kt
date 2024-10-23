@@ -1,0 +1,18 @@
+package com.thoren.manganimu.domain.anime.usecases
+
+import com.thoren.manganimu.common.ResultOf
+import com.thoren.manganimu.core.models.AnimeItem
+import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
+import jakarta.inject.Inject
+
+fun interface GetPopularAnimeUseCase {
+    suspend fun invoke(): ResultOf<List<AnimeItem>, Throwable>
+}
+
+internal class GetPopularAnimeUseCaseImpl @Inject constructor(
+    private val animeRepository: AnimeRepository
+) : GetPopularAnimeUseCase {
+    override suspend fun invoke(): ResultOf<List<AnimeItem>, Throwable> {
+        return animeRepository.getPopularAnime()
+    }
+}
