@@ -1,4 +1,4 @@
-package com.thoren.manganimu.core.network.models
+package com.thoren.manganimu.core.network.models.anime
 
 
 import kotlinx.serialization.SerialName
