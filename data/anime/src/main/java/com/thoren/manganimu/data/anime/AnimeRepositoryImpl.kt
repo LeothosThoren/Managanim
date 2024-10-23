@@ -1,0 +1,32 @@
+package com.thoren.manganimu.data.anime
+
+import com.thoren.manganimu.common.IoDispatcher
+import com.thoren.manganimu.common.ResultOf
+import com.thoren.manganimu.common.mapFailure
+import com.thoren.manganimu.common.mapSuccess
+import com.thoren.manganimu.core.models.AnimeItem
+import com.thoren.manganimu.core.network.extension.apiCall
+import com.thoren.manganimu.core.network.networkdatasources.AnimeNetworkDataSource
+import com.thoren.manganimu.data.anime.mappers.toAnimeItem
+import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
+import jakarta.inject.Inject
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
+
+internal class AnimeRepositoryImpl @Inject constructor(
+    private val animeNetworkDataSource: AnimeNetworkDataSource,
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+) : AnimeRepository {
+    override suspend fun getPopularAnime(): ResultOf<List<AnimeItem>, Throwable> =
+        withContext(ioDispatcher) {
+            apiCall {
+                animeNetworkDataSource.getPopularAnime()
+            }.mapSuccess {
+                it.map { animeResponse ->
+                    animeResponse.toAnimeItem()
+                }
+            }.mapFailure {
+                it.throwable
+            }
+        }
+}
