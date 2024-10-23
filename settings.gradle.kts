@@ -19,6 +19,7 @@ rootProject.name = "Manganimu"
 include(":app")
 
 include(":core:common")
+include(":core:models")
 include(":core:network")
 include(":core:ui")
 include(":data:anime")
