@@ -1,4 +1,6 @@
 package com.thoren.manganimu.common
 
-class Result {
+sealed interface Result {
+    data object Success
+    data object Failure
 }

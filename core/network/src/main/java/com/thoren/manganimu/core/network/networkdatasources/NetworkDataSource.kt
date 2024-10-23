@@ -1,6 +1,6 @@
-package com.thoren.manganimu.network.injection.networkdatasources
+package com.thoren.manganimu.core.network.networkdatasources
 
-import com.thoren.manganimu.network.injection.models.PopularAnimeResponse
+import com.thoren.manganimu.core.network.models.PopularAnimeResponse
 
 interface AnimeNetworkDataSource {
 

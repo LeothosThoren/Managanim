@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.thoren.manganimu.common"
+    namespace = "com.thoren.manganimu.core.common"
 }
 
 dependencies {

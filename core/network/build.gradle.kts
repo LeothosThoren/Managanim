@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.thoren.manganimu.network"
+    namespace = "com.thoren.manganimu.core.network"
 }
 
 dependencies {

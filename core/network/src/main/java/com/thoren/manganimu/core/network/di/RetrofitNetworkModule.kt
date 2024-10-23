@@ -1,4 +1,4 @@
-package com.thoren.manganimu.network.injection.di
+package com.thoren.manganimu.core.network.di
 
 import dagger.Module
 import dagger.Provides

@@ -1,6 +1,6 @@
-package com.thoren.manganimu.network.injection.services
+package com.thoren.manganimu.core.network.services
 
-import com.thoren.manganimu.network.injection.models.PopularAnimeResponse
+import com.thoren.manganimu.core.network.models.PopularAnimeResponse
 import retrofit2.http.GET
 
 internal interface AnimeApiService {

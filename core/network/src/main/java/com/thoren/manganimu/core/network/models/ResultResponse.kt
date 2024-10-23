@@ -1,4 +1,4 @@
-package com.thoren.manganimu.network.injection.models
+package com.thoren.manganimu.core.network.models
 
 
 import kotlinx.serialization.SerialName

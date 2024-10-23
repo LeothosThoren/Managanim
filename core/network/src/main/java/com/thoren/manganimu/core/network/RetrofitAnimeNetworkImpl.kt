@@ -1,8 +1,8 @@
-package com.thoren.manganimu.network.injection
+package com.thoren.manganimu.core.network
 
-import com.thoren.manganimu.network.injection.models.PopularAnimeResponse
-import com.thoren.manganimu.network.injection.networkdatasources.AnimeNetworkDataSource
-import com.thoren.manganimu.network.injection.services.AnimeApiService
+import com.thoren.manganimu.core.network.models.PopularAnimeResponse
+import com.thoren.manganimu.core.network.networkdatasources.AnimeNetworkDataSource
+import com.thoren.manganimu.core.network.services.AnimeApiService
 import jakarta.inject.Inject
 
 internal class RetrofitAnimeNetworkImpl @Inject constructor(
