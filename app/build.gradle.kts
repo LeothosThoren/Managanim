@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:ui"))
+    implementation(projects.core.ui)
 
-    implementation((project(":feature:anime")))
-    implementation((project(":feature:manga")))
-    implementation((project(":feature:music")))
-    implementation((project(":feature:option")))
+    implementation(projects.feature.anime)
+    implementation(projects.feature.manga)
+    implementation(projects.feature.music)
+    implementation(projects.feature.option)
 
 
     implementation(libs.androidx.activity.compose)
