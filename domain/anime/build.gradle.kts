@@ -8,8 +8,6 @@ android {
 }
 
 dependencies {
-    api(projects.data.anime)
-
     implementation(projects.core.common)
     implementation(projects.core.models)
 }

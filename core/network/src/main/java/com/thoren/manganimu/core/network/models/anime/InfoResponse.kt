@@ -5,11 +5,11 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TrailerResponse(
+data class InfoResponse(
     @SerialName("id")
-    val id: String,
-    @SerialName("site")
-    val site: String,
-    @SerialName("thumbnail")
-    val thumbnail: String
+    val id: Int,
+    @SerialName("idMal")
+    val idMal: Int,
+    @SerialName("title")
+    val title: TitleResponse
 )

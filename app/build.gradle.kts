@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.data.anime)
 
     implementation(projects.feature.anime)
     implementation(projects.feature.manga)

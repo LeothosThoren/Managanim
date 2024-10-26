@@ -6,8 +6,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PopularAnimeResponse(
-    @SerialName("status")
-    val status: Int,
+    @SerialName("code")
+    val code: Int,
+    @SerialName("message")
+    val message: String,
     @SerialName("page")
     val page: PageResponse,
     @SerialName("results")

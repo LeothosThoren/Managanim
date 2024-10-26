@@ -18,7 +18,10 @@ import javax.inject.Qualifier
 object RetrofitNetworkModule {
 
     @Provides
-    fun provideJson(): Json = Json { ignoreUnknownKeys = true }
+    fun provideJson(): Json = Json {
+        ignoreUnknownKeys = true
+        coerceInputValues = true
+    }
 
     @Provides
     fun provideHttpLoggingInterceptor(): Interceptor =

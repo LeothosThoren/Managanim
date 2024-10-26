@@ -1,12 +1,12 @@
 package com.thoren.manganimu.core.network.networkdatasources
 
-import com.thoren.manganimu.core.network.models.anime.ResultResponse
+import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
 
 interface AnimeNetworkDataSource {
 
     //    suspend fun getRecentEpisodes(): List<RecentEpisode> // https://api.amvstr.me/api/v1/recentepisode/sub
 //
-    suspend fun getPopularAnime(): List<ResultResponse> // https://api.amvstr.me/api/v2/popular/all
+    suspend fun getPopularAnime(): PopularAnimeResponse // https://api.amvstr.me/api/v2/popular/all
 //
 //    fun getStreamingLinks(): List<StreamingLink> // https://api.amvstr.me/api/v2/stream
 //
