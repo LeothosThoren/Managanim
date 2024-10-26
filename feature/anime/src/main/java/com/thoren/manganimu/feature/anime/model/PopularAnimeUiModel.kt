@@ -1,0 +1,15 @@
+package com.thoren.manganimu.feature.anime.model
+
+import com.thoren.manganimu.core.models.AnimeItem
+
+data class PopularAnimeUiModel(
+    val id: Int,
+    val title: String,
+    val imageUrl: String,
+)
+
+fun AnimeItem.toPopularAnimeUiModel() = PopularAnimeUiModel(
+    id = id,
+    title = title,
+    imageUrl = image,
+)

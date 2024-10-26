@@ -8,6 +8,10 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.common)
+    implementation(projects.core.models)
+    implementation(projects.domain.anime)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 }
