@@ -2,7 +2,7 @@
 activityCompose = "1.9.2"
 androidTools = "31.6.0"
 androidxLifecycle = "2.8.5"
-agp = "8.6.0"
+agp = "8.7.1"
 coil = "2.7.0"
 composeBom = "2024.09.01"
 coreKtx = "1.13.1"
