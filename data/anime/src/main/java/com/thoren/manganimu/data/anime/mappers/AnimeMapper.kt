@@ -10,5 +10,9 @@ internal fun ResultResponse.toAnimeItem(): AnimeItem =
     AnimeItem(
         id = id,
         title = title.english,
-        image = coverImage.medium,
+        coverImage = AnimeItem.CoverImage(
+            medium = coverImage.medium,
+            large = coverImage.large,
+            extraLarge = coverImage.extraLarge,
+        )
     )
