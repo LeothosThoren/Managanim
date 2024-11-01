@@ -19,5 +19,6 @@ object CoilModule {
         @ApplicationContext application: Context,
     ): ImageLoader = ImageLoader.Builder(application)
         .crossfade(true)
+        .fallback(android.R.drawable.ic_menu_report_image)
         .build()
 }
