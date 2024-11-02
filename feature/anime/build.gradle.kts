@@ -12,6 +12,8 @@ dependencies {
     implementation(projects.core.models)
     implementation(projects.domain.anime)
 
+    implementation(libs.androidx.navigation.compose)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 }

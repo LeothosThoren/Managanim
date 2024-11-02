@@ -26,16 +26,18 @@ import kotlin.random.Random
 internal fun DashboardRoute(
     modifier: Modifier = Modifier,
     viewModel: DashboardViewModel = hiltViewModel<DashboardViewModel>(),
+    onClickItem: (Int) -> Unit
 ) {
     val state = viewModel.uiState.collectAsStateWithLifecycle()
 
-    DashboardScreen(modifier = modifier, state = state.value)
+    DashboardScreen(modifier = modifier, state = state.value, onClickItem = onClickItem)
 }
 
 @Composable
 internal fun DashboardScreen(
     modifier: Modifier = Modifier,
-    state: DashboardUiState
+    state: DashboardUiState,
+    onClickItem: (Int) -> Unit
 ) {
     Scaffold { innerPaddings ->
         Box(
@@ -55,7 +57,8 @@ internal fun DashboardScreen(
                         items(items = state.popularAnime, key = { it.id }) { anime ->
                             BasicAnimeTile(
                                 title = anime.title,
-                                imageUrl = anime.imageUrl
+                                imageUrl = anime.imageUrl,
+                                onClick = { onClickItem(anime.id) }
                             )
                         }
                     }
@@ -83,8 +86,9 @@ private fun DashboardScreenPreview() {
                             title = Random.nextLong().toString(),
                             imageUrl = "https://cdn.myanimelist.net/images/anime/13/17405.jpg"
                         )
-                    }
-            )
+                    },
+            ),
+            onClickItem = { }
         )
     }
 }
