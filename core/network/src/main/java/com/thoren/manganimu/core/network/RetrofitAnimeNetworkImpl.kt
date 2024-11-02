@@ -5,9 +5,7 @@ import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
 import com.thoren.manganimu.core.network.networkdatasources.AnimeNetworkDataSource
 import com.thoren.manganimu.core.network.services.AnimeApiService
 import jakarta.inject.Inject
-import kotlinx.serialization.InternalSerializationApi
 
-@OptIn(InternalSerializationApi::class)
 internal class RetrofitAnimeNetworkImpl @Inject constructor(
     private val animeApiService: AnimeApiService
 ) : AnimeNetworkDataSource {
