@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.manganimu.library)
     alias(libs.plugins.manganimu.hilt)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {

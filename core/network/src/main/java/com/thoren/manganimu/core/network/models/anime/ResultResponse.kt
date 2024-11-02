@@ -1,9 +1,10 @@
 package com.thoren.manganimu.core.network.models.anime
 
-
+import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@InternalSerializationApi
 @Serializable
 data class ResultResponse(
     @SerialName("id")

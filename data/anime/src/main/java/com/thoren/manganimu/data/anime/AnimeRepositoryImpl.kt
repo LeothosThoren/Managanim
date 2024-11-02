@@ -11,12 +11,14 @@ import com.thoren.manganimu.data.anime.mappers.toAnimeItems
 import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.InternalSerializationApi
 import javax.inject.Inject
 
 internal class AnimeRepositoryImpl @Inject constructor(
     private val animeNetworkDataSource: AnimeNetworkDataSource,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : AnimeRepository {
+    @OptIn(InternalSerializationApi::class)
     override suspend fun getPopularAnime(): ResultOf<List<AnimeItem>, Throwable> =
         withContext(ioDispatcher) {
             apiCall {

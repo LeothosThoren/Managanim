@@ -1,7 +1,9 @@
 package com.thoren.manganimu.core.network.networkdatasources
 
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
+import kotlinx.serialization.InternalSerializationApi
 
+@OptIn(InternalSerializationApi::class)
 interface AnimeNetworkDataSource {
 
     //    suspend fun getRecentEpisodes(): List<RecentEpisode> // https://api.amvstr.me/api/v1/recentepisode/sub
