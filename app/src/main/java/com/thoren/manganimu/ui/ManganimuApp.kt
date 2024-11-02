@@ -52,5 +52,5 @@ internal fun ManganimuApp(
 
 private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelDestination) =
     this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) ?: false
-    } ?: false
+        it.route?.contains(destination.name, true) == true
+    } == true

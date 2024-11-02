@@ -69,7 +69,6 @@ internal fun DashboardScreen(
                 }
             }
         }
-
     }
 }
 
