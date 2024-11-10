@@ -1,6 +1,9 @@
 package com.thoren.manganimu.data.anime.mappers
 
 import com.thoren.manganimu.core.models.AnimeItem
+import com.thoren.manganimu.core.models.EpisodeItem
+import com.thoren.manganimu.core.network.models.anime.AnimeEpisodeResponse
+import com.thoren.manganimu.core.network.models.anime.EpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
 import com.thoren.manganimu.core.network.models.anime.ResultResponse
 import kotlinx.serialization.InternalSerializationApi
@@ -18,4 +21,15 @@ internal fun ResultResponse.toAnimeItem(): AnimeItem =
             large = coverImage.large,
             extraLarge = coverImage.extraLarge,
         )
+    )
+internal fun AnimeEpisodeResponse.toEpisodeItems(): List<EpisodeItem> =
+    episodes.map { it.toEpisodeItem() }
+
+internal fun EpisodeResponse.toEpisodeItem(): EpisodeItem =
+    EpisodeItem(
+        id = id,
+        title = title,
+        description = description,
+        number = number,
+        image = image
     )
