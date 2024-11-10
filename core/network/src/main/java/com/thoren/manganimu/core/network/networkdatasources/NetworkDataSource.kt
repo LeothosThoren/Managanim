@@ -1,5 +1,6 @@
 package com.thoren.manganimu.core.network.networkdatasources
 
+import com.thoren.manganimu.core.network.models.anime.AnimeEpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
 
 interface AnimeNetworkDataSource {
@@ -18,7 +19,7 @@ interface AnimeNetworkDataSource {
 //
 //    suspend fun searchAnime(query: String): List<SearchAnime> // https://api.amvstr.me/api/v2/search?q=query&limit=10
 //
-//    suspend fun getAnimeEpisodes(id: String): List<AnimeEpisodes> // https://api.amvstr.me/api/v2/episodes/id
+suspend fun getAnimeEpisodes(id: String): AnimeEpisodeResponse // https://api.amvstr.me/api/v2/episode/id
 //
 //    suspend fun getAnimeDetails(id: String): AnimeDetails // https://api.amvstr.me/api/v2/anime/id
 //
