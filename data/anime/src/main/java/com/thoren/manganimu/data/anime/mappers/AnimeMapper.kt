@@ -6,12 +6,9 @@ import com.thoren.manganimu.core.network.models.anime.AnimeEpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.EpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
 import com.thoren.manganimu.core.network.models.anime.ResultResponse
-import kotlinx.serialization.InternalSerializationApi
 
-@OptIn(InternalSerializationApi::class)
 internal fun PopularAnimeResponse.toAnimeItems(): List<AnimeItem> = results.map { it.toAnimeItem() }
 
-@OptIn(InternalSerializationApi::class)
 internal fun ResultResponse.toAnimeItem(): AnimeItem =
     AnimeItem(
         id = id,

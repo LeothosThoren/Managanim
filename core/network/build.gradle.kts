@@ -5,9 +5,6 @@ plugins {
 
 android {
     namespace = "com.thoren.manganimu.core.network"
-    kotlinOptions {
-        freeCompilerArgs += listOf("-Xopt-in=kotlinx.serialization.InternalSerializationApi")
-    }
 }
 
 dependencies {
