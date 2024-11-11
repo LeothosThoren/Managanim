@@ -6,13 +6,12 @@ import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
 import javax.inject.Inject
 
 fun interface GetPopularAnimeUseCase {
-    suspend fun invoke(): ResultOf<List<AnimeItem>, Throwable>
+    suspend operator fun invoke(): ResultOf<List<AnimeItem>, Throwable>
 }
 
 internal class GetPopularAnimeUseCaseImpl @Inject constructor(
     private val animeRepository: AnimeRepository
 ) : GetPopularAnimeUseCase {
-    override suspend fun invoke(): ResultOf<List<AnimeItem>, Throwable> =
+    override suspend operator fun invoke(): ResultOf<List<AnimeItem>, Throwable> =
         animeRepository.getPopularAnime()
-
 }
