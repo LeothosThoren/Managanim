@@ -10,7 +10,8 @@ import com.thoren.manganimu.core.network.extension.apiCall
 import com.thoren.manganimu.core.network.networkdatasources.AnimeNetworkDataSource
 import com.thoren.manganimu.data.anime.mappers.toAnimeItems
 import com.thoren.manganimu.data.anime.mappers.toEpisodeItems
-import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
+import com.thoren.manganimu.domain.anime.repositories.EpisodeRepository
+import com.thoren.manganimu.domain.anime.repositories.PopularAnimeRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -18,7 +19,8 @@ import javax.inject.Inject
 internal class AnimeRepositoryImpl @Inject constructor(
     private val animeNetworkDataSource: AnimeNetworkDataSource,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
-) : AnimeRepository {
+) : PopularAnimeRepository, EpisodeRepository {
+
     override suspend fun getPopularAnime(): ResultOf<List<AnimeItem>, Throwable> =
         withContext(ioDispatcher) {
             apiCall {

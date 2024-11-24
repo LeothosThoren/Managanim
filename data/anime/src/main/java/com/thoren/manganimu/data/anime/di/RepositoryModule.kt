@@ -1,7 +1,8 @@
 package com.thoren.manganimu.data.anime.di
 
 import com.thoren.manganimu.data.anime.AnimeRepositoryImpl
-import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
+import com.thoren.manganimu.domain.anime.repositories.EpisodeRepository
+import com.thoren.manganimu.domain.anime.repositories.PopularAnimeRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,5 +15,10 @@ internal interface RepositoryModule {
     @Binds
     fun bindAnimeRepository(
         impl: AnimeRepositoryImpl,
-    ): AnimeRepository
+    ): PopularAnimeRepository
+
+    @Binds
+    fun bindEpisodeRepository(
+        impl: AnimeRepositoryImpl,
+    ): EpisodeRepository
 }

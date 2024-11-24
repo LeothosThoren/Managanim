@@ -2,7 +2,7 @@ package com.thoren.manganimu.domain.anime.usecases
 
 import com.thoren.manganimu.common.ResultOf
 import com.thoren.manganimu.core.models.EpisodeItem
-import com.thoren.manganimu.domain.anime.repositories.AnimeRepository
+import com.thoren.manganimu.domain.anime.repositories.EpisodeRepository
 import javax.inject.Inject
 
 
@@ -11,8 +11,8 @@ fun interface GetAnimeEpisodeUseCase {
 }
 
 internal class GetAnimeEpisodeUseCaseImpl @Inject constructor(
-    private val animeRepository: AnimeRepository
+    private val episodeRepository: EpisodeRepository
 ) : GetAnimeEpisodeUseCase {
     override suspend fun invoke(id: String): ResultOf<List<EpisodeItem>, Throwable> =
-        animeRepository.getAnimeEpisodes(id)
+        episodeRepository.getAnimeEpisodes(id)
 }
