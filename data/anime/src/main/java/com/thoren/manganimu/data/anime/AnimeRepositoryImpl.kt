@@ -4,10 +4,12 @@ import com.thoren.manganimu.common.IoDispatcher
 import com.thoren.manganimu.common.ResultOf
 import com.thoren.manganimu.common.mapFailure
 import com.thoren.manganimu.common.mapSuccess
+import com.thoren.manganimu.core.models.AnimeFailure
 import com.thoren.manganimu.core.models.AnimeItem
 import com.thoren.manganimu.core.models.EpisodeItem
 import com.thoren.manganimu.core.network.extension.apiCall
 import com.thoren.manganimu.core.network.networkdatasources.AnimeNetworkDataSource
+import com.thoren.manganimu.data.anime.mappers.toAnimeFailure
 import com.thoren.manganimu.data.anime.mappers.toAnimeItems
 import com.thoren.manganimu.data.anime.mappers.toEpisodeItems
 import com.thoren.manganimu.domain.anime.repositories.EpisodeRepository
@@ -21,7 +23,7 @@ internal class AnimeRepositoryImpl @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : PopularAnimeRepository, EpisodeRepository {
 
-    override suspend fun getPopularAnime(): ResultOf<List<AnimeItem>, Throwable> =
+    override suspend fun getPopularAnime(): ResultOf<List<AnimeItem>, AnimeFailure> =
         withContext(ioDispatcher) {
             apiCall {
                 animeNetworkDataSource.getPopularAnime()
@@ -29,17 +31,17 @@ internal class AnimeRepositoryImpl @Inject constructor(
                 popularAnimeResponses.toAnimeItems()
             }
         }.mapFailure {
-            it.throwable
+            it.toAnimeFailure()
         }
 
-    override suspend fun getAnimeEpisodes(id: String): ResultOf<List<EpisodeItem>, Throwable> =
+    override suspend fun getAnimeEpisodes(id: String): ResultOf<List<EpisodeItem>, AnimeFailure> =
         withContext(ioDispatcher) {
             apiCall {
                 animeNetworkDataSource.getAnimeEpisodes(id)
             }.mapSuccess { animeEpisodeResponse ->
                 animeEpisodeResponse.toEpisodeItems()
             }.mapFailure {
-                it.throwable
+                it.toAnimeFailure()
             }
         }
 }
