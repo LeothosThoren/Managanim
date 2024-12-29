@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_anime_title">Anime</string>
+    <string name="feature_anime_failure_bad_request">Requête incorrecte</string>
+    <string name="feature_anime_failure_not_found">Non trouvé</string>
+    <string name="feature_anime_failure_many_requests">Trop de requêtes</string>
+    <string name="feature_anime_failure_server_error">Erreur serveur</string>
+    <string name="feature_anime_failure_unknown">Erreur inconnue</string>
+</resources>

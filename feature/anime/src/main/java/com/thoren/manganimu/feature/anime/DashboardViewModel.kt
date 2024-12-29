@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thoren.manganimu.common.onFailure
 import com.thoren.manganimu.common.onSuccess
+import com.thoren.manganimu.core.models.AnimeFailure
 import com.thoren.manganimu.domain.anime.usecases.GetPopularAnimeUseCase
 import com.thoren.manganimu.feature.anime.model.DashboardUiState
 import com.thoren.manganimu.feature.anime.model.toPopularAnimeUiModel
@@ -45,7 +46,14 @@ internal class DashboardViewModel @Inject constructor(
                     }
                 }.onFailure { failure ->
                     _uiState.update {
-                        DashboardUiState.Error(failure.message ?: "Unknown error")
+                        val message = when (failure) {
+                            is AnimeFailure.BadRequest -> R.string.feature_anime_failure_bad_request
+                            is AnimeFailure.NotFound -> R.string.feature_anime_failure_not_found
+                            is AnimeFailure.TooManyRequests -> R.string.feature_anime_failure_many_requests
+                            is AnimeFailure.ServerError -> R.string.feature_anime_failure_server_error
+                            else -> R.string.feature_anime_failure_unknown
+                        }
+                        DashboardUiState.Error(message)
                     }
                 }
         }
