@@ -1,5 +1,7 @@
 package com.thoren.manganimu.domain.anime.di
 
+import com.thoren.manganimu.domain.anime.usecases.GetAnimeDetailsUseCase
+import com.thoren.manganimu.domain.anime.usecases.GetAnimeDetailsUseCaseImpl
 import com.thoren.manganimu.domain.anime.usecases.GetAnimeEpisodeUseCase
 import com.thoren.manganimu.domain.anime.usecases.GetAnimeEpisodeUseCaseImpl
 import com.thoren.manganimu.domain.anime.usecases.GetPopularAnimeUseCase
@@ -22,4 +24,9 @@ internal interface DomainAnimeModule {
     fun bindGetAnimeEpisodeUseCase(
         impl: GetAnimeEpisodeUseCaseImpl,
     ): GetAnimeEpisodeUseCase
+
+    @Binds
+    fun bindGetAnimeDetailsUseCase(
+        impl: GetAnimeDetailsUseCaseImpl,
+    ): GetAnimeDetailsUseCase
 }
