@@ -5,7 +5,7 @@ import com.thoren.manganimu.core.models.AnimeItem
 data class PopularAnimeUiModel(
     val id: Int,
     val title: String,
-    val imageUrl: String
+    val imageUrl: String?
 )
 
 fun AnimeItem.toPopularAnimeUiModel() = PopularAnimeUiModel(

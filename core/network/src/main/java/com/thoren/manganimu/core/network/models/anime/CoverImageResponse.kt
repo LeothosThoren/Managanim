@@ -7,11 +7,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CoverImageResponse(
     @SerialName("extraLarge")
-    val extraLarge: String,
+    val extraLarge: String? = null,
     @SerialName("large")
-    val large: String,
+    val large: String? = null,
     @SerialName("medium")
-    val medium: String,
+    val medium: String? = null,
     @SerialName("color")
     val color: String? = null
 )

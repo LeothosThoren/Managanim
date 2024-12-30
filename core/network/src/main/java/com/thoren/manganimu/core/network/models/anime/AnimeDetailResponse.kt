@@ -9,7 +9,7 @@ data class AnimeDetailResponse(
     @SerialName("bannerImage")
     val bannerImage: String,
     @SerialName("code")
-    val code: Int,
+    val code: Int? = null,
     @SerialName("coverImage")
     val coverImage: CoverImageResponse,
     @SerialName("description")
@@ -17,7 +17,7 @@ data class AnimeDetailResponse(
     @SerialName("dub")
     val dub: Boolean,
     @SerialName("duration")
-    val duration: Int,
+    val duration: Int? = null,
     @SerialName("episodes")
     val episodes: Int,
     @SerialName("format")
@@ -31,11 +31,11 @@ data class AnimeDetailResponse(
     @SerialName("id_provider")
     val idProvider: IdProviderResponse,
     @SerialName("message")
-    val message: String,
+    val message: String? = null,
     @SerialName("popularity")
-    val popularity: Int,
+    val popularity: Int? = null,
     @SerialName("relation")
-    val relation: List<RelationResponse>,
+    val relation: List<RelationResponse> = emptyList(),
     @SerialName("season")
     val season: String,
     @SerialName("status")

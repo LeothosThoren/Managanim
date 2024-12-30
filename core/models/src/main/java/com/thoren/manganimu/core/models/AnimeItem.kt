@@ -6,8 +6,8 @@ data class AnimeItem(
     val coverImage: CoverImage,
 ) {
     data class CoverImage(
-        val medium: String,
-        val large: String,
-        val extraLarge: String,
+        val medium: String?,
+        val large: String?,
+        val extraLarge: String?,
     )
 }
