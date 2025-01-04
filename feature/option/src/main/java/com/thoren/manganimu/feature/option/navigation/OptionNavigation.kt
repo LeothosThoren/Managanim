@@ -7,13 +7,14 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.thoren.manganimu.core.navigation.ManganimuGraph
 
-const val OPTION_ROUTE = "option_route"
 
-fun NavController.navigateToOption(navOptions: NavOptions) = navigate(OPTION_ROUTE, navOptions)
+fun NavController.navigateToOption(navOptions: NavOptions) =
+    navigate(route = ManganimuGraph.OptionGraph.Settings, navOptions)
 
 fun NavGraphBuilder.optionScreen() {
-    composable(route = OPTION_ROUTE) {
+    composable<ManganimuGraph.OptionGraph.Settings> {
         Box(contentAlignment = Alignment.Center) { Text(text = "Option") }
     }
 }

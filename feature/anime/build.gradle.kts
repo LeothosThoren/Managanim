@@ -10,6 +10,7 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.models)
+    implementation(projects.core.navigation)
     implementation(projects.domain.anime)
 
     implementation(libs.androidx.navigation.compose)

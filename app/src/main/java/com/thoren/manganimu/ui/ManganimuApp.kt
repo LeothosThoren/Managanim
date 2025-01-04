@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -33,6 +35,8 @@ internal fun ManganimuApp(
 
                     item(
                         selected = selected,
+                        label = { Text(stringResource(destination.titleTextId)) },
+                        alwaysShowLabel = false,
                         icon = {
                             Icon(
                                 imageVector = if (selected) destination.selectedIcon else destination.unselectedIcon,
@@ -52,5 +56,5 @@ internal fun ManganimuApp(
 
 private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelDestination) =
     this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) == true
+        it.route.contentEquals(destination.graphRoute.javaClass.canonicalName)
     } == true

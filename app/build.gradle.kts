@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.navigation)
     implementation(projects.core.ui)
     implementation(projects.data.anime)
 
@@ -42,7 +43,6 @@ dependencies {
     implementation(projects.feature.manga)
     implementation(projects.feature.music)
     implementation(projects.feature.option)
-
 
     implementation(libs.androidx.activity.compose)
 }

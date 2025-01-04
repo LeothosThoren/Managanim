@@ -7,13 +7,13 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.thoren.manganimu.core.navigation.ManganimuGraph
 
-const val MUSIC_ROUTE = "music_route"
-
-fun NavController.navigateToMusic(navOptions: NavOptions) = navigate(MUSIC_ROUTE, navOptions)
+fun NavController.navigateToMusic(navOptions: NavOptions) =
+    navigate(ManganimuGraph.MusicGraph.Dashboard, navOptions)
 
 fun NavGraphBuilder.musicScreen() {
-    composable(route = MUSIC_ROUTE) {
+    composable<ManganimuGraph.MusicGraph.Dashboard> {
         Box(contentAlignment = Alignment.Center) { Text(text = "Music") }
     }
 }

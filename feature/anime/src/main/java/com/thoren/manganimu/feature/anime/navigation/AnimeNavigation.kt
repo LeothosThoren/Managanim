@@ -5,24 +5,26 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.thoren.manganimu.core.navigation.ManganimuGraph
 import com.thoren.manganimu.feature.anime.screens.DashboardRoute
 import com.thoren.manganimu.feature.anime.screens.EpisodesRoute
 
 fun NavController.navigateToAnime(navOptions: NavOptions) =
-    navigate(route = AnimeGraph.Dashboard, navOptions)
+    navigate(route = ManganimuGraph.AnimeGraph.Dashboard, navOptions)
 
-fun NavController.navigateToEpisodes(animeId: Int) = navigate(route = AnimeGraph.Episodes(animeId))
+fun NavController.navigateToEpisodes(animeId: Int) =
+    navigate(route = ManganimuGraph.AnimeGraph.Episodes(animeId))
 
 /** Anime Graph **/
 fun NavGraphBuilder.animeScreen(navController: NavController) {
-    composable<AnimeGraph.Dashboard> {
+    composable<ManganimuGraph.AnimeGraph.Dashboard> {
         DashboardRoute { animeId ->
             navController.navigateToEpisodes(animeId)
         }
     }
 
-    composable<AnimeGraph.Episodes> { entry ->
-        val animeId = entry.toRoute<AnimeGraph.Episodes>().id
+    composable<ManganimuGraph.AnimeGraph.Episodes> { entry ->
+        val animeId = entry.toRoute<ManganimuGraph.AnimeGraph.Episodes>().id
         EpisodesRoute(animeId)
     }
 }

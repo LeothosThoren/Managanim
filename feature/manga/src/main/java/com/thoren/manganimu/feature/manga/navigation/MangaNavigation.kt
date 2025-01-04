@@ -7,13 +7,13 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.thoren.manganimu.core.navigation.ManganimuGraph
 
-const val MANGA_ROUTE = "manga_route"
-
-fun NavController.navigateToManga(navOptions: NavOptions) = navigate(MANGA_ROUTE, navOptions)
+fun NavController.navigateToManga(navOptions: NavOptions) =
+    navigate(ManganimuGraph.MangaGraph.Dashboard, navOptions)
 
 fun NavGraphBuilder.mangaScreen() {
-    composable(route = MANGA_ROUTE) {
+    composable<ManganimuGraph.MangaGraph.Dashboard> {
         Box(contentAlignment = Alignment.Center) { Text(text = "Manga") }
     }
 }
