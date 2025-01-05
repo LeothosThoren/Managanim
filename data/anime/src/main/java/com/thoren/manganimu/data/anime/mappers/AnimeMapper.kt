@@ -8,13 +8,12 @@ import com.thoren.manganimu.core.network.models.anime.AnimeDetailResponse
 import com.thoren.manganimu.core.network.models.anime.AnimeEpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.EpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
-import com.thoren.manganimu.core.network.models.anime.ResultResponse
 import com.thoren.manganimu.core.network.models.failure.ApiCallFailure
 import com.thoren.manganimu.core.network.models.failure.HttpStatusCode
 
 internal fun PopularAnimeResponse.toAnimeItems(): List<AnimeItem> = results.map { it.toAnimeItem() }
 
-internal fun ResultResponse.toAnimeItem(): AnimeItem =
+internal fun PopularAnimeResponse.ResultResponse.toAnimeItem(): AnimeItem =
     AnimeItem(
         id = id,
         title = title.english,

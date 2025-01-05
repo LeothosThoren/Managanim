@@ -44,4 +44,45 @@ data class AnimeDetailResponse(
     val title: TitleResponse,
     @SerialName("year")
     val year: Int
-)
+) {
+
+    @Serializable
+    data class RelationResponse(
+        @SerialName("averageScore")
+        val averageScore: Int,
+        @SerialName("bannerImage")
+        val bannerImage: String?,
+        @SerialName("coverImage")
+        val coverImage: CoverImageResponse,
+        @SerialName("duration")
+        val duration: Int?,
+        @SerialName("episodes")
+        val episodes: Int?,
+        @SerialName("format")
+        val format: String,
+        @SerialName("genres")
+        val genres: List<String>,
+        @SerialName("id")
+        val id: Int,
+        @SerialName("idMal")
+        val idMal: Int,
+        @SerialName("season")
+        val season: String?,
+        @SerialName("status")
+        val status: String,
+        @SerialName("title")
+        val title: TitleResponse,
+        @SerialName("type")
+        val type: String
+    )
+
+    @Serializable
+    data class IdProviderResponse(
+        @SerialName("idGogo")
+        val idGogo: String,
+        @SerialName("idPahe")
+        val idPahe: String,
+        @SerialName("idZoro")
+        val idZoro: String
+    )
+}

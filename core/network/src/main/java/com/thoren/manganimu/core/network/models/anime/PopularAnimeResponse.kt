@@ -14,4 +14,28 @@ data class PopularAnimeResponse(
     val page: PageResponse,
     @SerialName("results")
     val results: List<ResultResponse>
-)
+) {
+
+
+    @Serializable
+    data class ResultResponse(
+        @SerialName("id")
+        val id: Int,
+        @SerialName("idMal")
+        val idMal: Int,
+        @SerialName("status")
+        val status: String,
+        @SerialName("title")
+        val title: TitleResponse,
+        @SerialName("format")
+        val format: String,
+        @SerialName("bannerImage")
+        val bannerImage: String,
+        @SerialName("coverImage")
+        val coverImage: CoverImageResponse,
+        @SerialName("episodes")
+        val episodes: Int? = null,
+        @SerialName("seasonYear")
+        val seasonYear: Int? = null,
+    )
+}
