@@ -1,4 +1,4 @@
-import com.android.build.gradle.TestExtension
+import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import com.thoren.manganimu.configureAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -15,9 +15,9 @@ class TestConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
             }
 
-            extensions.configure<TestExtension> {
+            extensions.configure<BaseAppModuleExtension> {
                 configureAndroid(this)
-                defaultConfig.targetSdk = 34
+                defaultConfig.targetSdk = 35
             }
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")

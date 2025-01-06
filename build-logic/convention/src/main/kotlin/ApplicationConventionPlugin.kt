@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import com.android.build.api.dsl.ApplicationExtension
 import com.thoren.manganimu.configureAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -12,8 +12,10 @@ class ApplicationConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
             }
 
-            extensions.configure<BaseAppModuleExtension> {
+            extensions.configure<ApplicationExtension> {
                 configureAndroid(commonExtension = this)
+                defaultConfig.targetSdk = 35
+                defaultConfig.minSdk = 26
             }
         }
     }
