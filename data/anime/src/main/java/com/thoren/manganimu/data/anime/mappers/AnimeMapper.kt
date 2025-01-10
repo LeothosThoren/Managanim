@@ -3,11 +3,14 @@ package com.thoren.manganimu.data.anime.mappers
 import com.thoren.manganimu.core.models.AnimeDetail
 import com.thoren.manganimu.core.models.AnimeFailure
 import com.thoren.manganimu.core.models.AnimeItem
+import com.thoren.manganimu.core.models.AnimeStream
 import com.thoren.manganimu.core.models.EpisodeItem
 import com.thoren.manganimu.core.network.models.anime.AnimeDetailResponse
 import com.thoren.manganimu.core.network.models.anime.AnimeEpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.EpisodeResponse
 import com.thoren.manganimu.core.network.models.anime.PopularAnimeResponse
+import com.thoren.manganimu.core.network.models.anime.stream.StreamResponse
+import com.thoren.manganimu.core.network.models.anime.stream.VideoStreamResponse
 import com.thoren.manganimu.core.network.models.failure.ApiCallFailure
 import com.thoren.manganimu.core.network.models.failure.HttpStatusCode
 
@@ -56,6 +59,22 @@ internal fun AnimeDetailResponse.toAnimeDetail(): AnimeDetail =
         status = status,
         title = title.english,
         year = year
+    )
+
+internal fun VideoStreamResponse.toAnimeStream(): AnimeStream =
+    AnimeStream(
+        id = info.id,
+        title = info.title,
+        episode = info.episode,
+        main = stream.multi.main.toStreamDetail(),
+        backup = stream.multi.backup.toStreamDetail()
+    )
+
+internal fun StreamResponse.MultiResponse.StreamDetailResponse.toStreamDetail(): AnimeStream.StreamDetail =
+    AnimeStream.StreamDetail(
+        url = url,
+        isM3U8 = isM3U8,
+        quality = quality
     )
 
 internal fun ApiCallFailure.toAnimeFailure() =
