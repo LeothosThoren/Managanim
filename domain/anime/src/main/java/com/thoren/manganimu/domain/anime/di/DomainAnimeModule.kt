@@ -4,6 +4,8 @@ import com.thoren.manganimu.domain.anime.usecases.GetAnimeDetailsUseCase
 import com.thoren.manganimu.domain.anime.usecases.GetAnimeDetailsUseCaseImpl
 import com.thoren.manganimu.domain.anime.usecases.GetAnimeEpisodeUseCase
 import com.thoren.manganimu.domain.anime.usecases.GetAnimeEpisodeUseCaseImpl
+import com.thoren.manganimu.domain.anime.usecases.GetAnimeStreamUseCase
+import com.thoren.manganimu.domain.anime.usecases.GetAnimeStreamUseCaseImpl
 import com.thoren.manganimu.domain.anime.usecases.GetPopularAnimeUseCase
 import com.thoren.manganimu.domain.anime.usecases.GetPopularAnimeUseCaseImpl
 import dagger.Binds
@@ -29,4 +31,9 @@ internal interface DomainAnimeModule {
     fun bindGetAnimeDetailsUseCase(
         impl: GetAnimeDetailsUseCaseImpl,
     ): GetAnimeDetailsUseCase
+
+    @Binds
+    fun bindGetAnimeStreamUseCase(
+        impl: GetAnimeStreamUseCaseImpl,
+    ): GetAnimeStreamUseCase
 }
