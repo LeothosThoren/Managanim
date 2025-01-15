@@ -1,4 +1,4 @@
-package com.thoren.manganimu.feature.anime.screens
+package com.thoren.manganimu.feature.anime.dashboard.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

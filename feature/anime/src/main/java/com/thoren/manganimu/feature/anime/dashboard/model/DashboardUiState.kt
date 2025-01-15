@@ -1,4 +1,4 @@
-package com.thoren.manganimu.feature.anime.model
+package com.thoren.manganimu.feature.anime.dashboard.model
 
 import androidx.annotation.StringRes
 

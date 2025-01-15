@@ -1,4 +1,4 @@
-package com.thoren.manganimu.feature.anime
+package com.thoren.manganimu.feature.anime.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,8 +6,9 @@ import com.thoren.manganimu.common.onFailure
 import com.thoren.manganimu.common.onSuccess
 import com.thoren.manganimu.core.models.AnimeFailure
 import com.thoren.manganimu.domain.anime.usecases.GetPopularAnimeUseCase
-import com.thoren.manganimu.feature.anime.model.DashboardUiState
-import com.thoren.manganimu.feature.anime.model.toPopularAnimeUiModel
+import com.thoren.manganimu.feature.anime.R
+import com.thoren.manganimu.feature.anime.dashboard.model.DashboardUiState
+import com.thoren.manganimu.feature.anime.dashboard.model.toPopularAnimeUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

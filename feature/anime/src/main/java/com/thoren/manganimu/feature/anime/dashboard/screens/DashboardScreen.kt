@@ -1,4 +1,4 @@
-package com.thoren.manganimu.feature.anime.screens
+package com.thoren.manganimu.feature.anime.dashboard.screens
 
 import PreviewTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -19,9 +19,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.thoren.manganimu.core.ui.common.SpaceSize
 import com.thoren.manganimu.core.ui.component.BasicAnimeTile
-import com.thoren.manganimu.feature.anime.DashboardViewModel
-import com.thoren.manganimu.feature.anime.model.DashboardUiState
-import com.thoren.manganimu.feature.anime.model.PopularAnimeUiModel
+import com.thoren.manganimu.feature.anime.dashboard.DashboardViewModel
+import com.thoren.manganimu.feature.anime.dashboard.model.DashboardUiState
+import com.thoren.manganimu.feature.anime.dashboard.model.PopularAnimeUiModel
 import kotlin.random.Random
 
 @Composable
