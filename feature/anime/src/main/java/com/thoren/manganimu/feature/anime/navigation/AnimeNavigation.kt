@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.thoren.manganimu.core.navigation.ManganimuGraph
 import com.thoren.manganimu.feature.anime.dashboard.screens.DashboardRoute
-import com.thoren.manganimu.feature.anime.dashboard.screens.EpisodesRoute
+import com.thoren.manganimu.feature.anime.detail.screens.EpisodesRoute
 
 fun NavController.navigateToAnime(navOptions: NavOptions) =
     navigate(route = ManganimuGraph.AnimeGraph.Dashboard, navOptions)
