@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AnimeEpisodeResponse(
-    @SerialName("episode") val episodes: List<EpisodeResponse>
+    @SerialName("results") val episodes: List<EpisodeResponse>
 )

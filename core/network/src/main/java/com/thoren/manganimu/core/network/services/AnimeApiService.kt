@@ -12,7 +12,7 @@ internal interface AnimeApiService {
     @GET("api/v2/popular")
     suspend fun getPopularAnime(): PopularAnimeResponse
 
-    @GET("api/v2/episode/{id}")
+    @GET("api/v2/episodes/{id}")
     suspend fun getAnimeEpisodes(@Path("id") id: String): AnimeEpisodeResponse
 
     @GET("api/v2/info/{id}")
